@@ -1,0 +1,18 @@
+{
+  "n_runs": 45,
+  "side_channel_present_pct": 100.0,
+  "endogenous_fails_pct": 100.0,
+  "exo_private_lt0_60_pct": 100.0,
+  "exo_useful_pct": 100.0,
+  "exo_dominates_pct": 100.0,
+  "nopriv_auc_mean": 0.998,
+  "ctx_auc_mean": 0.511,
+  "ctx_auc_sd": 0.016,
+  "ctx_auc_max": 0.538,
+  "exo_auc_mean": 0.514,
+  "exo_auc_sd": 0.043,
+  "exo_auc_max": 0.593,
+  "exo_rmse_mean": 1.859,
+  "high_rmse_mean": 1.89,
+  "low_rmse_mean": 18.771
+}

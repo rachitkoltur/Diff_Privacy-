@@ -1,0 +1,9 @@
+{
+  "model": "temporal sequence MLP (128,64), context L=15 (~3 s), Gazzari-style",
+  "is_gazzari_exact_model": false,
+  "no_privacy_auc": 0.989,
+  "no_privacy_bal": 0.957,
+  "defended_auc": 0.474,
+  "defended_bal": 0.508,
+  "note": "Stronger temporal attacker approximating a sequence deep model. NOT Gazzari's exact trained network; running that needs their repo, the full raw dataset, and a deep-learning stack."
+}

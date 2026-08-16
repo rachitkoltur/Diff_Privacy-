@@ -1,0 +1,108 @@
+{
+  "negative_result": {
+    "instantaneous_R_auc": 0.999,
+    "clean_smoothed_auc_W15": 0.804,
+    "separation_W15": 0.127,
+    "context_noise_std_W15": 0.754,
+    "snr_W15": 0.168,
+    "sweep": [
+      {
+        "W_windows": 15,
+        "W_seconds": 3.0,
+        "delta_c": 0.1333,
+        "noise_std": 0.754,
+        "clean_auc": 0.804,
+        "dp_auc": 0.514,
+        "dp_auc_sd": 0.051
+      },
+      {
+        "W_windows": 25,
+        "W_seconds": 5.0,
+        "delta_c": 0.08,
+        "noise_std": 0.453,
+        "clean_auc": 0.607,
+        "dp_auc": 0.461,
+        "dp_auc_sd": 0.058
+      },
+      {
+        "W_windows": 40,
+        "W_seconds": 8.0,
+        "delta_c": 0.05,
+        "noise_std": 0.283,
+        "clean_auc": 0.433,
+        "dp_auc": 0.479,
+        "dp_auc_sd": 0.047
+      },
+      {
+        "W_windows": 60,
+        "W_seconds": 12.0,
+        "delta_c": 0.0333,
+        "noise_std": 0.189,
+        "clean_auc": 0.528,
+        "dp_auc": 0.502,
+        "dp_auc_sd": 0.048
+      },
+      {
+        "W_windows": 90,
+        "W_seconds": 18.0,
+        "delta_c": 0.0222,
+        "noise_std": 0.126,
+        "clean_auc": 0.5,
+        "dp_auc": 0.501,
+        "dp_auc_sd": 0.018
+      },
+      {
+        "W_windows": 120,
+        "W_seconds": 24.0,
+        "delta_c": 0.0167,
+        "noise_std": 0.094,
+        "clean_auc": 0.514,
+        "dp_auc": 0.512,
+        "dp_auc_sd": 0.04
+      },
+      {
+        "W_windows": 160,
+        "W_seconds": 32.0,
+        "delta_c": 0.0125,
+        "noise_std": 0.071,
+        "clean_auc": 0.425,
+        "dp_auc": 0.503,
+        "dp_auc_sd": 0.014
+      },
+      {
+        "W_windows": 220,
+        "W_seconds": 44.0,
+        "delta_c": 0.0091,
+        "noise_std": 0.051,
+        "clean_auc": 0.534,
+        "dp_auc": 0.488,
+        "dp_auc_sd": 0.02
+      }
+    ],
+    "conclusion": "DP-released context AUC ~ 0.5 at every window: endogenous context-aware adaptivity cannot beat a fixed budget under LDP."
+  },
+  "safe_sampler": {
+    "dist_mean": 0.029,
+    "dist_var": 50.98,
+    "dist_var_theory": 49.83,
+    "eps_target": 1.0,
+    "empirical_max_log_ratio": 1.054,
+    "holds": true,
+    "note": "Discrete Laplace via exact rational sampling meets |log-ratio| <= eps. The float inverse-transform sampler is the Mironov(2012)-vulnerable one."
+  },
+  "fixed_scheme": {
+    "per_keystroke_budget": {
+      "eps_op=0.5": 1.0,
+      "eps_op=1.0": 2.0
+    },
+    "note_per_keystroke": "No context term now: eps_event <= F_tel * eps_op (2*0.5=1.0 at eps_op=0.5, 2*1.0=2.0 at eps_op=1.0).",
+    "w_window_telemetry_sum": {
+      "eps_op=0.5": 150.0,
+      "eps_op=1.0": 300.0
+    },
+    "eps_W": 300.0,
+    "w": 300,
+    "context_cost": 0.0,
+    "note_window": "At eps_op<=1 the w-window sum (<=300) stays under eps_W=300."
+  }
+}

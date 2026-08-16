@@ -1,0 +1,110 @@
+{
+  "description": "Company-utility benchmark: legitimate grip-state classifier (LDA + Random Forest, standard EMG pipeline) and aggregate estimation vs the keystroke attack, across an epsilon sweep, 8 seeds each.",
+  "seeds": 8,
+  "duration_s": 300.0,
+  "fixed_sweep": {
+    "no_privacy": {
+      "eps": null,
+      "lda_mean": 0.9706737278701447,
+      "lda_std": 0.009283595385767889,
+      "rf_mean": 0.9964913393687858,
+      "rf_std": 0.002834812983033496,
+      "attack_auc_mean": 0.9995302021008876,
+      "attack_auc_std": 0.0005615097921387668,
+      "agg_rel_err_mean": 0.0,
+      "agg_rel_err_std": 0.0
+    },
+    "8": {
+      "eps": 8.0,
+      "lda_mean": 0.7838207832057973,
+      "lda_std": 0.02176173605696029,
+      "rf_mean": 0.7503366566871533,
+      "rf_std": 0.01804857408395208,
+      "attack_auc_mean": 0.571244241352791,
+      "attack_auc_std": 0.04875759205944731,
+      "agg_rel_err_mean": 0.0699902448379714,
+      "agg_rel_err_std": 0.024905917857975905
+    },
+    "4": {
+      "eps": 4.0,
+      "lda_mean": 0.5965875679845785,
+      "lda_std": 0.019863835088113593,
+      "rf_mean": 0.5885880539178154,
+      "rf_std": 0.017566908482388267,
+      "attack_auc_mean": 0.4923173256731175,
+      "attack_auc_std": 0.056610779584484704,
+      "agg_rel_err_mean": 0.13998048967594307,
+      "agg_rel_err_std": 0.04981183571595172
+    },
+    "2": {
+      "eps": 2.0,
+      "lda_mean": 0.4483555714388403,
+      "lda_std": 0.022895471686462405,
+      "rf_mean": 0.45298121014284437,
+      "rf_std": 0.026658722655222226,
+      "attack_auc_mean": 0.4877495336395511,
+      "attack_auc_std": 0.04389011982288977,
+      "agg_rel_err_mean": 0.27996097935188613,
+      "agg_rel_err_std": 0.099623671431903
+    },
+    "1": {
+      "eps": 1.0,
+      "lda_mean": 0.37188642330151056,
+      "lda_std": 0.0226780453906027,
+      "rf_mean": 0.38659500889825343,
+      "rf_std": 0.02360577037509783,
+      "attack_auc_mean": 0.4795719765546826,
+      "attack_auc_std": 0.04435356918600729,
+      "agg_rel_err_mean": 0.5599219587037725,
+      "agg_rel_err_std": 0.19924734286380597
+    },
+    "0.5": {
+      "eps": 0.5,
+      "lda_mean": 0.34230920553985,
+      "lda_std": 0.024980889786160684,
+      "rf_mean": 0.3573936266386988,
+      "rf_std": 0.018098935790936452,
+      "attack_auc_mean": 0.4838787971882095,
+      "attack_auc_std": 0.04125196946010432,
+      "agg_rel_err_mean": 1.1198439174075447,
+      "agg_rel_err_std": 0.39849468572761143
+    },
+    "0.25": {
+      "eps": 0.25,
+      "lda_mean": 0.3315028175198923,
+      "lda_std": 0.01928448730257139,
+      "rf_mean": 0.34693691994471765,
+      "rf_std": 0.01875557311779865,
+      "attack_auc_mean": 0.48004314948057736,
+      "attack_auc_std": 0.04150159821360069,
+      "agg_rel_err_mean": 2.23968783481509,
+      "agg_rel_err_std": 0.796989371455223
+    },
+    "0.1": {
+      "eps": 0.1,
+      "lda_mean": 0.33211494416160026,
+      "lda_std": 0.016735970178105304,
+      "rf_mean": 0.34210688701231406,
+      "rf_std": 0.020659715935433934,
+      "attack_auc_mean": 0.4783960370259316,
+      "attack_auc_std": 0.04201639134106794,
+      "agg_rel_err_mean": 5.599219587037727,
+      "agg_rel_err_std": 1.9924734286380588
+    }
+  },
+  "exogenous": {
+    "scheme": "exogenous grip-mode",
+    "eps_type": 0.5,
+    "eps_hi": 8.0,
+    "lda_mean": 0.37831762783362727,
+    "rf_mean": 0.9515135711682334,
+    "attack_auc_mean": 0.5043826187207407,
+    "agg_rel_err_mean": 0.07778595713821657
+  },
+  "figures": [
+    "UTIL_curves.png",
+    "UTIL_tradeoff.png",
+    "UTIL_aggregate.png",
+    "UTIL_exogenous.png"
+  ]
+}

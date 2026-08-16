@@ -1,0 +1,25 @@
+{
+  "eps_type": 0.5,
+  "eps_hi": 8.0,
+  "results": {
+    "fixed_low (eps=0.5)": {
+      "typing_attack_auc": 0.534,
+      "typing_attack_bal": 0.523,
+      "grasp_recon_rmse": 22.548,
+      "per_keystroke_budget": 1.0
+    },
+    "fixed_high (eps=8.0)": {
+      "typing_attack_auc": 0.65,
+      "typing_attack_bal": 0.587,
+      "grasp_recon_rmse": 1.409,
+      "per_keystroke_budget": 16.0
+    },
+    "exogenous_adaptive": {
+      "typing_attack_auc": 0.547,
+      "typing_attack_bal": 0.503,
+      "grasp_recon_rmse": 1.409,
+      "per_keystroke_budget": 1.0
+    }
+  },
+  "dominates": true
+}

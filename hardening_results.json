@@ -1,0 +1,65 @@
+{
+  "fix1_timing": {
+    "raw_per_draw_us": {
+      "mean": 240.7,
+      "sd": 161.4,
+      "min": 14.6,
+      "max": 1379.3
+    },
+    "full_release_ms": 1.204,
+    "pct_of_200ms_window": 0.602,
+    "const_time_per_draw_us": {
+      "mean": 1655.6,
+      "sd": 1.4
+    },
+    "variance_reduction_x": 118.2,
+    "note": "Latency fits the window with huge margin. Raw sampler is data-dependent in time (the McMurtry timing channel); the constant-time wrapper flattens the variance so timing reveals nothing."
+  },
+  "fix2_attacker": {
+    "model": "MLP neural net (64,32)",
+    "mlp_no_privacy_auc": 1.0,
+    "mlp_defended_auc": 0.504,
+    "note": "A neural-net attacker also reads keystrokes with no privacy and is also driven to near chance by the fixed defence, so the leak is not an artifact of the tree model."
+  },
+  "fix3_anomalies": {
+    "injected": "sensor shift (+0.15 baseline) and sweat (+-40% slow gain drift)",
+    "empirical_max_log_ratio": 0.309,
+    "eps_target": 1.0,
+    "privacy_holds": true,
+    "defended_attack_auc_under_anomaly": 0.46,
+    "note": "Because the feature is clipped to [0,1] before noising, no anomaly can push the sensitivity past the bound, so eps-DP holds regardless (log-ratio <= eps). Anomalies hurt utility, not the privacy guarantee: the defence still holds."
+  },
+  "fix4_mode_transitions": {
+    "eps_type": 0.5,
+    "eps_hi": 8.0,
+    "exposed_keystroke_eps_if_missed": 16.0,
+    "protected_keystroke_eps": 1.0,
+    "sweep": [
+      {
+        "delay_windows": 0,
+        "delay_ms": 0,
+        "exposed_no_guard": 0.009,
+        "exposed_with_guard": 0.0
+      },
+      {
+        "delay_windows": 1,
+        "delay_ms": 200,
+        "exposed_no_guard": 0.044,
+        "exposed_with_guard": 0.0
+      },
+      {
+        "delay_windows": 2,
+        "delay_ms": 400,
+        "exposed_no_guard": 0.088,
+        "exposed_with_guard": 0.0
+      },
+      {
+        "delay_windows": 3,
+        "delay_ms": 600,
+        "exposed_no_guard": 0.129,
+        "exposed_with_guard": 0.0
+      }
+    ],
+    "note": "A late mode switch leaves edge keystrokes on the loose budget (eps_event up to 16 instead of 1). A guard band that turns the tight budget on a few windows early drives the exposed fraction to zero."
+  }
+}

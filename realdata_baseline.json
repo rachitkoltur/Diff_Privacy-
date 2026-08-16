@@ -1,0 +1,9 @@
+{
+ "det_balacc_best": 76.1,
+ "det_balacc_best_clf": "CRNN",
+ "det_balacc_mean": 73.8,
+ "top3_best": 32.1,
+ "top1_best": 12.2,
+ "n_participants": 17,
+ "n_classes_mc": 52
+}
